@@ -29,6 +29,7 @@ class DeuxLangues: UIViewController {
     @IBAction func add(_ sender: UIButton) {
         // Ajoute des mots en Français
         arrFrench.append(fr.text!)
+        
         // Ajoute des mots en Anglais
         arrEnglish.append(en.text!)
         

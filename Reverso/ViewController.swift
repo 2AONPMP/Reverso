@@ -91,6 +91,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      // Initialisation des tables en français et en anglais pour reconstituer les dictionnaries qui apparaitront dans le tableau
     
     func managerUser() {
+//        UserDefaults.standard.removeObject(forKey: "FRANÇAIS")
+//        UserDefaults.standard.removeObject(forKey: "ANGLAIS")
         if UserDefaults.standard.object(forKey: "FRANÇAIS") != nil {
             arrFrench = UserDefaults.standard.object(forKey: "FRANÇAIS") as! [String]
             arrEnglish = UserDefaults.standard.object(forKey: "ANGLAIS") as! [String]
@@ -102,6 +104,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
     }
+    
+    // Pour activier le clavier
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
+    }
+    
+     // Pour retourner le clavier
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    
     
     //-------------------
 }
