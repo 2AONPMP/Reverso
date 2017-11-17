@@ -17,6 +17,7 @@ class DeuxLangues: UIViewController {
     var arrEnglish: [String]!
     
     //--------------------
+    //Appelez la fonction les mots dans memoire
     override func viewDidLoad() {
         super.viewDidLoad()
         managerUser()
@@ -38,6 +39,7 @@ class DeuxLangues: UIViewController {
     }
     
     //-------------------------
+    // Guarder les mots dans memoire
     func managerUser() {
         if UserDefaults.standard.object(forKey: "FRANÇAIS") != nil {
             arrFrench = UserDefaults.standard.object(forKey: "FRANÇAIS") as! [String]
